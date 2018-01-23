@@ -3,4 +3,4 @@
 #### DataScience Profile.
 ![alt text](https://github.com/pmsn23/testrepo/blob/master/DataScienceProfile.jpeg)
 ##### Forked from MonnieMcGee/stat6306introdatascience
-##### Created the files/branch under master
+##### Created the files under pmsn23/stat6306introdatascience
