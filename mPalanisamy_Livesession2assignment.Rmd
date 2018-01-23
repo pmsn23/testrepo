@@ -1,0 +1,120 @@
+---
+title: "Live Session2 Assignment"
+author: "MSDS Data Science"
+date: "January 18, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##  Question 1
+
+#### 1. What is a basic workflow for reproducible research?
++ Data Gathering
++ Data Analysis
++ Presenting the results
+
+#### 2. What are five practical tips for making research reproducible?
++ Document Everything
++ Record & Save them in files
++ Files, Comments, Literatrures must be Human Readable
++ Establish links/relationship between files 
++ Plan, Organize, store and make the files available.
+
+#### 3. Give an example of how you might implement each tip.
+>#####   Document Everything
++ Document every details from the begining of the research
++ Record the session / version info of the software(s) used for the research
++ List out the packages installed with dates and version number
++ System configurations (Mac/Windows/VM etc.,)
++ Any materials (books, research papers, Website) which provided assistance
+
+>##### Record & Save them in files
++ Save all the details in a file which is easily accessible
++ Text files are the best, since it is free and OS independent
++ This helps even if the software is outdated in the future the code and  documentations can be used to reproduce in another language/tool
+
+>##### Files, comments, literatures must be human readable
++ Make sure the comments, explanations are readable by human
++ Provide when the source was created, if there is any file/database access then small snippet on what is it about and why this is being accessed.
++ Make it a practice to add comments with great details, there is very good chance the independent researcher might not understand the code
++ Error & Exception handling
+
+>##### Establish links/relationship between files
++ Create a relationship matrix of all the files and database
++ Publish a flow diagram, document the input & output where the details are orginating and how to recreate them
+
+>##### Plan, Organize, store and make the files available
++ Develop a plan to organize and store the files and related materials 
++ Make sure they are readily available
++ Limit the amount of contend in the files to ease the navigation and reading
+
+>#### 4. Which one of these do you think will be the most difficult?
++ I find the difficult part would be "Establish links/relationship between files".
++ This is a continuous effort, missing a small piece could derail the whole effort.
+
+##  Question 2
+```{r air_hist, echo=TRUE}
+# We will be using the built-in dataset airquality which has daily air quality 
+# measurements in New York from May to September 1973
+str(airquality)
+
+# Take only Temp columns
+Temperature <- airquality$Temp
+hist(Temperature)
+
+# Histogram with added parameters
+hist(Temperature,
+     main="Maximum daily temperature at La Guardia Airport",
+     xlab="Temperature in degrees Fahrenheit",
+     xlim=c(50,100),
+     col="darkmagenta",
+     freq=FALSE)
+
+# Q2A: Complete the following code to yield a scatterplot with x as Month and y as Temperature
+# Make the x label "Month" and the y label "Temperature"
+# Finally, make the title of the plot "Temperature by Month" 
+
+plot(x=airquality$Month, y=airquality$Temp, xlab='Month', 
+     ylab='Temperature', main = 'Temperature by Month')
+
+# Q2B: Complete the following code to yield a scatter plot with x as Temperature and y as Ozone 
+# Make the x label "Temperature" and the y label "Ozone",
+# Make the title of the plot "Temperature vs Ozone"
+
+plot(airquality$Temp ~ airquality$Ozone, xlab='Temperature',
+     ylab='Ozone',main='Temperature vs Ozone')
+```
+
+##  Question 3
+```{r cars}
+summary(cars)
+```
+
+```{r cars_plot, echo=TRUE}
+plot(cars)
+```
+
+```{r pressure_data}
+summary(pressure)
+```
+
+```{r pressure_plot, echo=TRUE}
+#3A, complete the following scatter plot. 
+#The x axis is temperature, while the y axis is pressure
+#Please title the graph "Temperature vs Pressure"
+
+plot(temperature ~ pressure, data=pressure, main="Temperature vs Pressure", xlab='Temperature', ylab='Pressure')
+```
+
+```{r pressure_plot2, echo=TRUE}
+#3B, complete the following scatter plot:
+#x axis is pressure, y axis is temperature,
+#Label the x axis as "Pressure" and the y axis as "Temperature"
+#Title the graph as "Pressure vs Temperature"
+
+plot (pressure ~ temperature, data=pressure, main="Pressure vs Temperature", xlab='Pressure', ylab='Temperature')
+```
+
+####3C, This is written in R Markdown.
