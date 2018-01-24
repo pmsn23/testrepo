@@ -116,5 +116,4 @@ plot(temperature ~ pressure, data=pressure, main="Temperature vs Pressure", xlab
 
 plot (pressure ~ temperature, data=pressure, main="Pressure vs Temperature", xlab='Pressure', ylab='Temperature')
 ```
-
-####3C, This is written in R Markdown.
+3C, This is written in R Markdown.
